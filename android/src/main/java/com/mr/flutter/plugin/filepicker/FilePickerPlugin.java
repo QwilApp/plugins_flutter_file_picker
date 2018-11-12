@@ -92,7 +92,7 @@ public class FilePickerPlugin implements MethodCallHandler {
 
   @Override
   public void onMethodCall(MethodCall call, Result result) {
-    if (call.method.equals("pickPDF")) {
+    if (call.method.equals("pick")) {
       this.result = result;
       startFileExplorer();
     } else {
@@ -123,7 +123,7 @@ public class FilePickerPlugin implements MethodCallHandler {
         intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
       }
 
-      intent.setType("application/pdf");
+      intent.setType("*/*");
       intent.addCategory(Intent.CATEGORY_OPENABLE);
       instance.activity().startActivityForResult(intent, REQUEST_CODE);
     } else {

@@ -23,7 +23,7 @@
     if (self) {
         _viewController = viewController;
         _pickerController = [[UIDocumentPickerViewController alloc]
-                                                               initWithDocumentTypes:@[@"com.adobe.pdf"]
+                                                               initWithDocumentTypes:@[@"public.data"]
                                                                inMode:UIDocumentPickerModeImport];
     }
     return self;
@@ -38,7 +38,7 @@
     }
 
 
-  if ([@"pickPDF" isEqualToString:call.method]) {
+  if ([@"pick" isEqualToString:call.method]) {
 
       _pickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
       _pickerController.delegate = self;
